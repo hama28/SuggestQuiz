@@ -1,5 +1,6 @@
 from flask import Flask, redirect
 from flask import render_template, request
+import csv
 
 app = Flask(__name__)
 
@@ -13,7 +14,10 @@ def categories():
 
 @app.route('/game')
 def game():
-    return render_template('game.html')
+    with open('suggest.csv') as f:
+        reader = csv.reader(f)
+        keyword = [row for row in reader]
+    return render_template('game.html',keyword=keyword[3][0])
 
 @app.route('/result')
 def result():
