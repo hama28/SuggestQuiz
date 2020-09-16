@@ -17,7 +17,7 @@ def game():
     with open('suggest.csv') as f:
         reader = csv.reader(f)
         keyword = [row for row in reader]
-    return render_template('game.html',keyword=keyword[3][0])
+    return render_template('game.html',keyword=keyword)
 
 @app.route('/result')
 def result():

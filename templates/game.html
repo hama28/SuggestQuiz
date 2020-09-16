@@ -7,8 +7,9 @@
 </head>
 <body>
     <h3>カテゴリタイトル</h3>
-    <p>{{ keyword }}</p>
-    <p>{{ keyword }}</p>
+    {% for word in keyword %}
+        <p>{{ word }}</p>
+    {% endfor %}
     <form action="#" method="POST">
         <textarea placeholder="答えを入力"></textarea>
         <button type="submit" value="回答">回答</button>
